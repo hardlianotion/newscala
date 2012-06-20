@@ -68,18 +68,22 @@ object ActorExerciseMain extends App {
   val rand = Random
   val simCount = 1000000000
   var aggregate = 0.0
-  val split = 2
+  val split = 4
 
-  for (i <- 1 to simCount)
+  val effSimCount = simCount - simCount % split
+
+  for (i <- 1 to effSimCount)
     aggregate += rand.nextDouble
 
-  val average = aggregate / simCount
+  val average = aggregate / effSimCount
+
   println("average: " + average.toString)
   val after = System.currentTimeMillis
-  println(((after - before)/1000.0).toString + " seconds, " + simCount.toString + " items.")
+  println(((after - before)/1000.0).toString + " seconds, " + effSimCount.toString + " items.")
 
-  val generator = for (i <- 1 to split) yield new AvgRandGenerator(i, simCount / split)
-  val collector = new AvgCollector(simCount)
+  val generator = for (i <- 1 to split) yield new AvgRandGenerator(i, effSimCount / split)
+  val collector = new AvgCollector(effSimCount)
+
   collector.start
 
   for (i <- 0 to split-1) {
