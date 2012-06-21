@@ -24,9 +24,10 @@ class AvgRandGenerator(idx: Int, count: Int) extends Actor {
           partialSum += rand.nextDouble
 
         collector ! (idx, partialSum, count)
-        println(idx.toString + " sent " + count.toString + " items.")
 
         val after = System.currentTimeMillis
+
+        println(idx.toString + " sent " + count.toString + " items.")
         println(idx.toString + " sent after " + ((after - before)/1000.0).toString + " seconds.")
 
         exit
@@ -57,6 +58,7 @@ class AvgCollector(total: Int) extends Actor {
         }
         case _ => {
           println("Don't know what to do with this one...")
+          exit
         }
       }
     }
