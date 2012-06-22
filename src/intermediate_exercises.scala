@@ -79,37 +79,63 @@ object Misty {
   // Exercise 9
   // Relative Difficulty: 2
   def ListMisty: Misty[List] = new Misty[List] {
-    def banana[A, B](f: (A) => List[B], ma: List[A]): List[B] = null
+    def banana[A, B](f: (A) => List[B], ma: List[A]): List[B] = ma flatMap f
 
     def unicorn[A](a: A): List[A] = List(a)
   }
 
   // Exercise 10
   // Relative Difficulty: 2
-  def OptionMisty: Misty[Option] = error("todo")
+  def OptionMisty: Misty[Option] = new Misty[Option] {
+    def banana[A, B](f: (A) => Option[B], ma: Option[A]): Option[B] = ma flatMap f
+
+    def unicorn[A](a: A): Option[A] = Some(a)
+  }
 
   // Exercise 11
   // Relative Difficulty: 2
-  def StreamMisty: Misty[Stream] = error("todo")
+  def StreamMisty: Misty[Stream] = new Misty[Stream] {
+    def banana[A, B](f: (A) => Stream[B], ma: Stream[A]): Stream[B] = ma flatMap f
+
+    def unicorn[A](a: A): Stream[A] = Stream(a)
+  }
 
   // Exercise 12
   // Relative Difficulty: 2
-  def ArrayMisty: Misty[Array] = error("todo")
+  def ArrayMisty: Misty[Array] = new Misty[Array] {
+    def banana[A, B](f: (A) => Array[B], ma: Array[A]): Array[B] = null
+
+    def unicorn[A](a: A): Array[A] = null
+  }
 
   // Exercise 13
   // Relative Difficulty: 6
-  def Function1Misty[X]: Misty[PartialType[Function1, X]#Apply] =
-    error("todo")
+  def Function1Misty[X]: Misty[PartialType[Function1, X]#Apply] = new Misty[PartialType[Function1, X]#Apply] {
+    //FIXME or UNDERSTAND: below seems wrong to me.
+    // my solution:
+    // def banana[A, B](f: (A) => (X) => B, ma: (X) => A): (X) => B = (x: X) => f(ma(x))
+    // The return type should be (X) => B, but compiler seems to want B.
+
+    def banana[A, B](f: (A) => (X) => B, ma: (X) => A): (X) => B = (x: X) => f(ma(x))(x)
+
+    def unicorn[A](a: A): (X) => A = _ => a
+  }
 
   // Exercise 14
   // Relative Difficulty: 7
-  def EitherLeftMisty[X]: Misty[PartialType[Either.LeftProjection, X]#Flip] =
-    error("todo")
+  def EitherLeftMisty[X]: Misty[PartialType[Either.LeftProjection, X]#Flip] = new Misty[PartialType[LeftProjection, X]#Flip] {
+    def banana[A, B](f: (A) => LeftProjection[B, X], ma: LeftProjection[A, X]): LeftProjection[B, X] = (ma flatMap (f andThen (_.e))).left
+
+    def unicorn[A](a: A): LeftProjection[A, X] = LeftProjection(Left(a))
+  }
 
   // Exercise 15
   // Relative Difficulty: 5
-  def EitherRightMisty[X]: Misty[PartialType[Either.RightProjection, X]#Apply] =
-    error("todo")
+  def EitherRightMisty[X]: Misty[PartialType[Either.RightProjection, X]#Apply] = new Misty[PartialType[RightProjection, X]#Apply] {
+    def banana[A, B](f: (A) => RightProjection[X, B], ma: RightProjection[X,A]): RightProjection[X,B] = (ma flatMap (f andThen (_.e))).right
+
+    def unicorn[A](a: A): RightProjection[X,A] = RightProjection(Right(a))
+  }
 
   // Exercise 16
   // Relative Difficulty: 3
