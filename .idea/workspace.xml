@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1ec71b23-f3de-4224-b9dc-acf95a75956c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/intermediate_exercises.scala" afterPath="$PROJECT_DIR$/src/intermediate_exercises.scala" />
     </list>
     <ignored path="newscala.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -498,7 +497,11 @@
       <created>1340279950207</created>
       <updated>1340279950207</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="More intermediate exercises.">
+      <created>1340353245743</created>
+      <updated>1340353245743</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -591,7 +594,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Intermediate scala exercises half done." />
+    <option name="LAST_COMMIT_MESSAGE" value="More intermediate exercises." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -608,6 +611,7 @@
     <MESSAGE value="Small fix to allow simulation counts that are not multiples split." />
     <MESSAGE value="Intermediate scala exercises." />
     <MESSAGE value="Intermediate scala exercises half done." />
+    <MESSAGE value="More intermediate exercises." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
