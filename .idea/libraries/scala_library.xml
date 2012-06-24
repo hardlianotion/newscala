@@ -1,12 +1,10 @@
 <component name="libraryTable">
   <library name="scala-library">
     <CLASSES>
-      <root url="jar:///usr/local/scala/current/lib/scala-library.jar!/" />
+      <root url="file:///usr/local/scala/scala-2.9.2/lib" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="file:///usr/local/scala/current/src" />
-    </SOURCES>
-    <jarDirectory url="file:///usr/local/scala/current/src" recursive="false" type="SOURCES" />
+    <SOURCES />
+    <jarDirectory url="file:///usr/local/scala/scala-2.9.2/lib" recursive="false" />
   </library>
 </component>

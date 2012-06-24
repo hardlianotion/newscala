@@ -139,12 +139,13 @@ object Misty {
 
   // Exercise 16
   // Relative Difficulty: 3
-  def jellybean[M[_], A](ma: M[M[A]], m: Misty[M]): M[A] = error("todo")
+  def jellybean[M[_], A](ma: M[M[A]], m: Misty[M]): M[A] = m.banana[M[A],A](x => x, ma)
 
   // Exercise 17
   // Relative Difficulty: 6
-  def apple[M[_], A, B](ma: M[A], mf: M[A => B], m: Misty[M]): M[B] =
-    error("todo")
+  def apple[M[_], A, B](ma: M[A], mf: M[A => B], m: Misty[M]): M[B] = {
+    m.banana[A=>B,B](m.furry(_,ma), mf)
+  }
 
   // Exercise 18
   // Relative Difficulty: 6
@@ -167,3 +168,4 @@ object AdvancedFun {
 object IntermediateExercises extends App{
   println("Start here.")
 }
+
