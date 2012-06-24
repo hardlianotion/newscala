@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ec71b23-f3de-4224-b9dc-acf95a75956c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ninetynine_exercises.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/scala_compiler.xml" afterPath="$PROJECT_DIR$/.idea/libraries/scala_compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/scala_library.xml" afterPath="$PROJECT_DIR$/.idea/libraries/scala_library.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/akka_lib.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/akka_exercises.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/intermediate_exercises.scala" afterPath="$PROJECT_DIR$/src/intermediate_exercises.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newscala.iml" afterPath="$PROJECT_DIR$/newscala.iml" />
     </list>
     <ignored path="newscala.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,7 +66,7 @@
       <file leaf-file-name="actor_exercise.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actor_exercise.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="12" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0">
+            <state line="67" column="7" selection-start="1727" selection-end="1727" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -92,11 +90,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ninetynine_exercises.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ninetynine_exercises.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ninetynine_exercises.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="72" selection-start="2974" selection-end="2974" vertical-scroll-proportion="0.8933649">
+            <state line="91" column="68" selection-start="2974" selection-end="2974" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="akka_exercises.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/akka_exercises.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="27" selection-start="2016" selection-end="2016" vertical-scroll-proportion="0.21800947">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#189#208#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,6 +139,7 @@
         <option value="$PROJECT_DIR$/src/actor_exercise.scala" />
         <option value="$PROJECT_DIR$/src/intermediate_exercises.scala" />
         <option value="$PROJECT_DIR$/src/ninetynine_exercises.scala" />
+        <option value="$PROJECT_DIR$/src/akka_exercises.scala" />
       </list>
     </option>
   </component>
@@ -162,6 +173,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -210,20 +231,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -237,11 +248,11 @@
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.39832535" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.39832535" />
   </component>
-  <component name="RunManager" selected="Scala Console.Console">
+  <component name="RunManager" selected="Application.Pi">
     <configuration default="false" name="ActorExerciseMain" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ActorExerciseMain" />
       <option name="VM_PARAMETERS" value="-Xms128m -Xmx512m" />
@@ -261,6 +272,22 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Pi" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="akka.tutorial.first.scala.Pi" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="newscala" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -302,25 +329,6 @@
         <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -346,6 +354,25 @@
       <envs />
       <properties />
       <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="SBT.BeforeRunTask" enabled="false" runInCurrentModule="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -409,9 +436,10 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.ActorExerciseMain" />
       <item index="1" class="java.lang.String" itemvalue="Scala Console.Console" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Pi" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -462,7 +490,11 @@
       <created>1340353245743</created>
       <updated>1340353245743</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="More intermediate exercises and some 99 exercises.">
+      <created>1340534497106</created>
+      <updated>1340534497106</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -489,15 +521,15 @@
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32884902" sideWeight="0.47875568" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32884902" sideWeight="0.47268587" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19581465" sideWeight="0.47420335" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19581465" sideWeight="0.47116843" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39924315" sideWeight="0.4934066" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32884902" sideWeight="0.5159332" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32884902" sideWeight="0.52200305" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14631464" sideWeight="0.32766762" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IvyIDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -509,7 +541,7 @@
       <window_info id="Amazon EC2" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DatabaseBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14339909" sideWeight="0.671151" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23916294" sideWeight="0.60318667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23916294" sideWeight="0.599393" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Time Tracker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -555,7 +587,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="More intermediate exercises." />
+    <option name="LAST_COMMIT_MESSAGE" value="More intermediate exercises and some 99 exercises." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -573,6 +605,7 @@
     <MESSAGE value="Intermediate scala exercises." />
     <MESSAGE value="Intermediate scala exercises half done." />
     <MESSAGE value="More intermediate exercises." />
+    <MESSAGE value="More intermediate exercises and some 99 exercises." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -592,11 +625,6 @@
         <state line="10" column="32" selection-start="223" selection-end="223" vertical-scroll-proportion="0.08797654" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actor_exercise.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="12" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/easy_exercises.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="16" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" />
@@ -611,8 +639,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ninetynine_exercises.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="72" selection-start="2974" selection-end="2974" vertical-scroll-proportion="0.8933649">
+        <state line="91" column="68" selection-start="2974" selection-end="2974" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actor_exercise.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="7" selection-start="1727" selection-end="1727" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/akka_exercises.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="27" selection-start="2016" selection-end="2016" vertical-scroll-proportion="0.21800947">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#189#208#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -669,7 +714,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Scala|newscala</last-edited>
+          <last-edited>newscala</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -693,7 +738,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>scala-library</last-edited>
+          <last-edited>akka-lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
