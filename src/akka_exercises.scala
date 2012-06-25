@@ -11,48 +11,64 @@ import akka.actor._
 import akka.routing.RoundRobinRouter
 import akka.util.Duration
 import akka.util.duration._
+import scala.util.Random
+import scala.math.pow
 
 sealed trait PiMessage
+
 case object Calculate extends PiMessage
+
 case class Work(start: Int, nrOfElements: Int) extends PiMessage
-case class Result(value: Double) extends PiMessage
+
+case class Result(value: (Double, Double)) extends PiMessage
+
 case class PiApproximation(pi: Double, duration: Duration)
 
 class Worker extends Actor {
 
-  // calculatePiFor ...
-  def calculatePiFor(start: Int, nrOfElements: Int): Double = {
-    var acc = 0.0
-    for (i <- start until (start + nrOfElements))
-      acc += 4.0 * (1 - (i % 2) * 2) / (2 * i + 1)
-    acc
+  def calculatePiFor(start: Int, numElements: Int): (Double, Double) = {
+    val random = new Random(2 * start + 1)
+    var result = 0.0
+    for (i <- 0 to numElements) {
+      val x = random.nextDouble
+      val y = random.nextDouble
+      if (x*x + y*y < 1.0)
+        result += 1.0
+    }
+    (result, numElements.toDouble)
   }
 
   def receive = {
-    case Work(start, nrOfElements) =>
-      sender ! Result(calculatePiFor(start, nrOfElements)) // perform the work
+    case Work(start, numElements) =>
+      sender ! Result(calculatePiFor(start, numElements)) // perform the work
   }
 }
 
-class Master(nrOfWorkers: Int, nrOfMessages: Int, nrOfElements: Int, listener: ActorRef)
+class Master(numWorkers: Int, numMessages: Int, numElements: Int, listener: ActorRef)
   extends Actor {
 
-  var pi: Double = _
-  var nrOfResults: Int = _
+  var cumulants: Double = _
+  var sims: Double = _
+  var numResults: Int = _
   val start: Long = System.currentTimeMillis
 
   val workerRouter = context.actorOf(
-    Props[Worker].withRouter(RoundRobinRouter(nrOfWorkers)), name = "workerRouter")
+    Props[Worker].withRouter(RoundRobinRouter(numWorkers)), name = "workerRouter")
 
   def receive = {
     case Calculate =>
-      for (i <- 0 until nrOfMessages) workerRouter ! Work(i * nrOfElements, nrOfElements)
-    case Result(value) ⇒
-      pi += value
-      nrOfResults += 1
-      if (nrOfResults == nrOfMessages) {
+      for (i <- 0 until numMessages) workerRouter ! Work(i * numElements, numElements)
+    //case Result((value, count)) =>
+    case Result((value,count)) =>
+      cumulants += value
+      sims += count
+      numResults += 1
+
+      println("count: " + numResults.toString)
+
+      if (numResults == numMessages) {
         // Send the result to the listener
-        listener ! PiApproximation(pi, duration = (System.currentTimeMillis - start).millis)
+        listener ! PiApproximation(4*cumulants/sims, duration = (System.currentTimeMillis - start).millis)
         // Stops this actor and all its supervised children
         context.stop(self)
       }
@@ -62,7 +78,7 @@ class Master(nrOfWorkers: Int, nrOfMessages: Int, nrOfElements: Int, listener: A
 
 class Listener extends Actor {
   def receive = {
-    case PiApproximation(pi, duration) ⇒
+    case PiApproximation(pi, duration) =>
       println("\n\tPi approximation: \t\t%s\n\tCalculation time: \t%s"
         .format(pi, duration))
       context.system.shutdown()
@@ -71,7 +87,7 @@ class Listener extends Actor {
 
 object Pi extends App {
 
-  calculate(nrOfWorkers = 4, nrOfElements = 10000, nrOfMessages = 10000)
+  calculate(nrOfWorkers = 8, nrOfElements = 10000, nrOfMessages = 10000)
 
   // actors and messages ...
 
